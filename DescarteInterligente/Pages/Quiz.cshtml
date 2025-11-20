@@ -1,0 +1,159 @@
+﻿@page
+@model QuizModel
+@{
+    ViewData["Title"] = "Quiz Educacional";
+}
+
+<h1 class="mb-4">Quiz: Você sabe descartar corretamente?</h1>
+
+<h2 class="mt-5 fw-bold">Desafio do Descarte</h2>
+<p class="text-muted mb-4">Arraste cada item para a lixeira correta!</p>
+
+<div class="game-container">
+    <div class="items">
+        <div class="item" draggable="true" data-type="organico">🍌 Casca de Banana</div>
+        <div class="item" draggable="true" data-type="eletronico">🔋 Pilha Usada</div>
+        <div class="item" draggable="true" data-type="reciclavel">📦 Caixa de Papelão</div>
+        <div class="item" draggable="true" data-type="especial">💡 Lâmpada</div>
+        <div class="item" draggable="true" data-type="reciclavel">🥤 Garrafa PET</div>
+        <div class="item" draggable="true" data-type="organico">🍂 Folhas</div>
+        <div class="item" draggable="true" data-type="eletronico">📱 Celular quebrado</div>
+    </div>
+
+    <div class="bins">
+        <div class="bin" data-bin="reciclavel">♻️ Reciclável</div>
+        <div class="bin" data-bin="organico">🌱 Orgânico</div>
+        <div class="bin" data-bin="eletronico">📱 Eletrônico</div>
+        <div class="bin" data-bin="especial">⚠️ Especial</div>
+    </div>
+</div>
+
+<div id="scoreBox" class="score-box">
+    Pontos: <span id="score">0</span>
+</div>
+
+
+<p class="lead">Responda as perguntas e veja seu resultado!</p>
+
+<form id="quizForm" class="mb-4">
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">
+            1. Onde se descarta pilhas e baterias?
+        </label>
+        <select class="form-select" name="q1">
+            <option value="">Escolha...</option>
+            <option value="errado">Lixo reciclável</option>
+            <option value="correto">Ponto de coleta de eletrônicos</option>
+            <option value="errado">Lixo comum</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">
+            2. Vidro quebrado deve ser:
+        </label>
+        <select class="form-select" name="q2">
+            <option value="">Escolha...</option>
+            <option value="errado">Jogando direto no reciclável</option>
+            <option value="correto">Embalado e enviado ao lixo especial</option>
+            <option value="errado">Misturado ao lixo orgânico</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">
+            3. Restos de alimentos vão para:
+        </label>
+        <select class="form-select" name="q3">
+            <option value="">Escolha...</option>
+            <option value="errado">Lixo reciclável</option>
+            <option value="correto">Lixo orgânico</option>
+            <option value="errado">Eletrônicos</option>
+        </select>
+    </div>
+
+    <button type="button" class="btn btn-primary" onclick="corrigirQuiz()">Ver resultado</button>
+</form>
+
+<div id="resultado" class="alert d-none"></div>
+
+@section Scripts {
+    <script>
+        function corrigirQuiz() {
+            const respostas = document.querySelectorAll("select");
+            let pontos = 0;
+
+            respostas.forEach(r => {
+                if (r.value === "correto") pontos++;
+            });
+
+            const resultado = document.getElementById("resultado");
+            resultado.classList.remove("d-none");
+
+            if (pontos === 3) {
+                resultado.className = "alert alert-success";
+                resultado.textContent = "Excelente! Você sabe descartar corretamente.";
+            } else if (pontos === 2) {
+                resultado.className = "alert alert-warning";
+                resultado.textContent = "Muito bem! Mas ainda pode melhorar.";
+            } else {
+                resultado.className = "alert alert-danger";
+                resultado.textContent = "Atenção! Que tal revisar as informações no site?";
+            }
+        }
+    </script>
+    <script>
+        let score = 0;
+
+        const items = document.querySelectorAll(".item");
+        const bins = document.querySelectorAll(".bin");
+        const scoreSpan = document.getElementById("score");
+
+        items.forEach(item => {
+            item.addEventListener("dragstart", e => {
+                e.dataTransfer.setData("type", item.dataset.type);
+                item.classList.add("dragging");
+            });
+
+            item.addEventListener("dragend", () => {
+                item.classList.remove("dragging");
+            });
+        });
+
+        bins.forEach(bin => {
+            bin.addEventListener("dragover", e => {
+                e.preventDefault();
+                bin.style.background = "#e9ecef";
+            });
+
+            bin.addEventListener("dragleave", () => {
+                bin.style.background = "#f7f7f7";
+            });
+
+            bin.addEventListener("drop", e => {
+                e.preventDefault();
+                const itemType = e.dataTransfer.getData("type");
+
+                if (itemType === bin.dataset.bin) {
+                    bin.classList.add("correct");
+                    setTimeout(() => bin.classList.remove("correct"), 600);
+
+                    score++;
+                    scoreSpan.textContent = score;
+
+                    const dragging = document.querySelector(".item.dragging");
+                    dragging.remove();
+
+                } else {
+                    bin.classList.add("wrong");
+                    setTimeout(() => bin.classList.remove("wrong"), 600);
+                }
+
+                bin.style.background = "#f7f7f7";
+            });
+        });
+    </script>
+
+
+}

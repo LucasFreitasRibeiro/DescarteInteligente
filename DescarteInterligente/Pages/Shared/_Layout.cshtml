@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Descarte Inteligente</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+        .navbar,
+        .navbar * {
+            position: relative;
+            z-index: 2000 !important;
+        }
+
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            transition: 0.2s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #0d6efd !important;
+            transform: translateY(-2px);
+        }
+        .card {
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        footer {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg border-bottom shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" asp-page="/Index">
+                    ♻️ Descarte Inteligente
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Index">Início</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Categorias
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" asp-page="/Eletronicos">Lixo Eletrônico</a></li>
+                                <li><a class="dropdown-item" asp-page="Reciclavel">Lixo Reciclável</a></li>
+                                <li><a class="dropdown-item" asp-page="/Organico">Lixo Orgânico</a></li>
+                                <li><a class="dropdown-item" asp-page="/Especial">Lixo Especial</a></li>
+                                <li><a class="dropdown-item" asp-page="/Rejeitos">Rejeitos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/ComoSeparar">Como Separar</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Quiz">Quiz</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Sobre">Sobre</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="container py-4">
+        @RenderBody()
+    </main>
+
+
+    <footer class="text-center text-muted py-3 mt-5 border-top">
+        <div class="container">
+            &copy; 2025 - Descarte Inteligente · <a asp-page="/Privacy" class="text-decoration-none">Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Início";
+}
+<section class="hero-section d-flex align-items-center text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3 text-white">Descarte Inteligente</h1>
+        <p class="lead text-white-50 mb-4">
+            Aprenda como descartar cada tipo de resíduo de maneira correta e sustentável.
+        </p>
+
+        
+    </div>
+</section>
+
+<section class="container my-5">
+    <h2 class="fw-bold mb-4">Por que o Descarte Correto é Essencial?</h2>
+
+    <p class="mb-3">
+        O descarte adequado de resíduos sólidos é fundamental para proteger a saúde pública,
+        preservar o meio ambiente e apoiar o desenvolvimento sustentável. Práticas incorretas
+        podem causar contaminação do solo, da água e do ar, além de favorecer pragas,
+        enchentes e doenças relacionadas ao saneamento.
+    </p>
+
+    <p class="mb-3">
+        A separação na fonte — feita no momento em que o resíduo é gerado — é o primeiro
+        e mais importante passo. Ela garante que materiais recicláveis, orgânicos, eletrônicos
+        e resíduos especiais sigam para o tratamento adequado.
+    </p>
+
+    <p>
+        Quando todos participam, fortalecemos a economia circular, reduzimos desperdícios
+        e construímos cidades mais limpas e sustentáveis.
+    </p>
+</section>
+
+<section class="container my-5">
+    <h2 class="fw-bold text-center mb-4">Categorias de Resíduos</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <div class="col">
+            <a asp-page="/Eletronicos" class="text-decoration-none text-dark">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="display-5 mb-2">📱</div>
+                    <h5 class="fw-bold">Lixo Eletrônico</h5>
+                    <p class="text-muted small">
+                        Celulares, baterias, computadores e aparelhos elétricos.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a asp-page="/Reciclavel" class="text-decoration-none text-dark">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="display-5 mb-2">♻️</div>
+                    <h5 class="fw-bold">Lixo Reciclável</h5>
+                    <p class="text-muted small">
+                        Plásticos, papéis, vidros e metais recicláveis.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a asp-page="/Organico" class="text-decoration-none text-dark">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="display-5 mb-2">🌱</div>
+                    <h5 class="fw-bold">Lixo Orgânico</h5>
+                    <p class="text-muted small">
+                        Restos de alimentos, cascas, folhas e resíduos biodegradáveis.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a asp-page="/Especial" class="text-decoration-none text-dark">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="display-5 mb-2">⚠️</div>
+                    <h5 class="fw-bold">Lixo Especial</h5>
+                    <p class="text-muted small">
+                        Óleo usado, remédios, lâmpadas, produtos químicos e outros.
+                    </p>
+                </div>
+            </a>
+        </div>
+@* 
+        <div class="col">
+            <a asp-page="/Categorias/Dejetos" class="text-decoration-none text-dark">
+                <div class="card shadow-sm h-100 text-center p-3">
+                    <div class="display-5 mb-2">🗑️</div>
+                    <h5 class="fw-bold">Dejetos (Rejeitos)</h5>
+                    <p class="text-muted small">
+                        Materiais sem possibilidade de reciclagem ou reaproveitamento.
+                    </p>
+                </div>
+            </a>
+        </div>
+ *@
+    </div>
+</section>
