@@ -1,0 +1,7 @@
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\bin\Release\net9.0\publish\DescarteInterligente.exe
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\bin\Release\net9.0\publish\appsettings.Development.json
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\bin\Release\net9.0\publish\appsettings.json
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\bin\Release\net9.0\publish\DescarteInterligente.dll
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\bin\Release\net9.0\publish\DescarteInterligente.deps.json
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\bin\Release\net9.0\publish\DescarteInterligente.runtimeconfig.json
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\bin\Release\net9.0\publish\DescarteInterligente.pdb

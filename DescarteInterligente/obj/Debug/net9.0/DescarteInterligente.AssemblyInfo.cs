@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DescarteInterligente")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+716eb1f8be48c3bfa9166d1be85e0b8112e633a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("DescarteInterligente")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DescarteInterligente")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

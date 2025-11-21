@@ -97,3 +97,4 @@ C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\D
 C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\obj\Debug\net9.0\ref\DescarteInterligente.dll
 C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\obj\Debug\net9.0\compressed\py8aqh2dsr-{0}-c731pmbxf2-c731pmbxf2.gz
 C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\obj\Debug\net9.0\compressed\nnsby3vr6t-{0}-imj61l5xl9-imj61l5xl9.gz
+C:\Users\lucas\OneDrive\UNINTER\ATIVIDADES EXTENSIONISTAS\DescarteInterligente\DescarteInterligente\obj\Debug\net9.0\DescarteInterligente.sourcelink.json
